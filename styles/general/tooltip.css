@@ -1,0 +1,16 @@
+
+.tooltip {
+	position: absolute;
+	/* Maximum possible z-index, always above everything else */
+	z-index: 2147483647;
+	display: inline-block;
+	text-align: center;
+	background-color: #e6e6e6;
+	color: #212121;
+	border: 1px solid #00000000;
+	border-radius: 5px;
+	font-size: 0.85rem;
+	padding: 0.1rem 0.3rem 0.0rem 0.3rem;
+	pointer-events: none;
+	white-space: nowrap;
+}

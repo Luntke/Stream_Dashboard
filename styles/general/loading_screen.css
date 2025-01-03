@@ -1,0 +1,66 @@
+
+#loading_screen_node {
+	position: fixed;
+	z-index: 2;
+	display: table;
+	width: 100%;
+	height: 100%;
+	min-width: var(--minimum-width);
+	min-height: var(--minimum-height);
+	overflow: hidden;
+	background-color: var(--background-color);
+	color: hsl(240, 3%, 89%);
+	top: 0px;
+	opacity: 1.0;
+	font-size: 24px;
+}
+
+.loading_screen_transition {
+	transition-property: top, opacity;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
+	transition-delay: 0s;
+}
+
+#loading_screen_node > div {
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#loading_screen_node p::before {
+	content: "Loading";
+}
+
+#loading_screen_node.loading_error p::before {
+	content: "There was an error, maybe try again :(";
+}
+
+#loading_screen_node.loading_error {
+	color: #d81c1c;
+}
+
+#loading_screen_bar_node {
+	position: relative;
+	display: inline-block;
+	width: 300px;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.3601);
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+#loading_screen_progress_node {
+	position: absolute;
+	top: 0px;
+	left: -100%;
+	display: inline-block;
+	width: 300px;
+	height: 230px;
+	/*  Gradient From https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient */
+	background: linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0.0) 70.71%),
+	            linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0.0) 70.71%),
+	            linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.0) 70.71%);
+	background-color: hsl(0, 0%, 50%);
+	transition: all 0.5s ease-in-out;
+}

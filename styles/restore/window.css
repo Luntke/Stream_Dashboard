@@ -1,0 +1,138 @@
+
+/*  General  */
+
+[data-window-type="restore"] .window_content{
+	padding: 0px;
+}
+
+/*  Restore Stream  */
+
+.window.restored_stream_window {
+	width: 450px;
+}
+
+#restore_selection_container {
+	display: block;
+	height: 500px;
+	width: 100%;
+	padding: 12px 0px;
+	text-align: center;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.window_content.restore_content {
+	width: 448px;
+	/* Loading screen should have the final height */
+	height: 736px;
+	overflow-y: hidden;
+	padding: 0px;
+}
+
+.restore_content .restore_statistics {
+	width: 352px;
+	margin: 8px 0px 8px 20px;
+}
+
+.data_container.recovery_container {
+	padding: 0px 16px 8px 16px;
+}
+
+.restore_loading_text {
+	padding: 120px 0px 20px 0px;
+}
+
+.restore_error_text {
+	color: #ea3737;
+}
+
+.restore_loading_text,
+.restore_error_text {
+	text-align: center;
+	font-size: 18px;
+}
+
+.restore_scroll_container {
+	height: 628px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+.restore_description_title {
+	width: 280px;
+	overflow: hidden;
+	line-height: 18px;
+	height: 36px;
+	margin-bottom: -8px;
+	padding: 10px 0px 0px 20px;
+	text-align: left;
+}
+
+.restore_description_publish_time {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	text-align: right;
+}
+
+.restore_description {
+	padding: 12px 16px 0px 16px;
+}
+
+/*  VOD Element */
+
+.restore_vod_element {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: 12px 0px;
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+.restore_vod_element:hover {
+	background-color: rgba(255, 255, 255, 0.08);
+}
+
+.vod_image {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.vod_image,
+.vod_image img {
+	width: 160px;
+	height: 90px;
+}
+
+.vod_text {
+	box-sizing: border-box;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 161px;
+	height: 90px;
+	margin-left: 10px;
+}
+
+.vod_stream_title {
+	text-align: left;
+	line-height: 22px;
+	max-height: 66px;
+	word-wrap: break-word;
+	overflow: hidden;
+}
+
+.vod_duration {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.vod_publish_time {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}

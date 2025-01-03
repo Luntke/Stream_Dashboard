@@ -1,0 +1,15 @@
+
+@media all and (min-height: 800px) {
+	body {
+		overflow-y: hidden;
+	}
+	.data_container {
+		padding: 24px 32px calc(100vh - 32px) 32px;
+	}
+}
+
+@media all and (min-width: 800px) {
+	.scroll_block {
+		height: calc(100vh - 92px);
+	}
+}

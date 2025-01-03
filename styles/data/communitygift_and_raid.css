@@ -1,0 +1,58 @@
+
+/*  Raid And Communitygift  */
+
+.raid,
+.communitygift {
+	width: 100%;
+	color: #ffffff;
+	font-size: 18px;
+}
+
+.raid_top_bar,
+.communitygift_top_bar {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 10px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+.raid_top_bar {
+	background-color: hsl(121, 31%, 44%);
+}
+
+.communitygift_top_bar {
+	background-color: hsl(174, 44%, 44%);
+}
+
+.raid_viewer_count,
+.communitygift_gift_count {
+	display: inline-block;
+	float: left;
+}
+
+.raid_time,
+.communitygift_time {
+	float: right;
+}
+
+.raid_content,
+.communitygift_content {
+	line-height: 22px;
+	padding: 5px 10px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	text-align: center;
+	word-break: break-word;
+	font-size: 20px;
+}
+
+.raid_content {
+	background-color: hsl(121, 25%, 54%);
+}
+
+.communitygift_content {
+	background-color: hsl(174, 34%, 54%);
+}

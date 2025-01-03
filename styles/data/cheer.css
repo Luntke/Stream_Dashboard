@@ -1,0 +1,110 @@
+
+/*  Cheer Content  */
+
+.cheermote {
+	white-space: nowrap;
+}
+
+/*  Cheer Top Bar Color  */
+
+.cheer_tier_1 .cheer_top_bar {
+	background-color: #979797cc;
+}
+
+.cheer_tier_2 .cheer_top_bar {
+	background-color: #9b55d4cc;
+}
+
+.cheer_tier_3 .cheer_top_bar {
+	background-color: #2da79ccc;
+}
+
+.cheer_tier_4 .cheer_top_bar {
+	background-color: #3096dacc;
+}
+
+.cheer_tier_5 .cheer_top_bar {
+	background-color: #de4539cc;
+}
+
+/*  Cheer Node  */
+
+.cheer {
+	width: 100%;
+	color: #ffffff;
+	font-size: 18px;
+	background-color: hsl(0, 2%, 23%);
+	border-radius: 3px;
+}
+
+.data_container > .slide_in.cheer[data-below-minimum="1"] {
+	transition-property: margin-top, opacity;
+	transition-duration: 0.6667s, 0.2s;
+	opacity: 0.35;
+}
+
+.data_container > .slide_in.cheer[data-below-minimum="1"]:hover {
+	opacity: 0.75;
+}
+
+.cheer_top_bar {
+	box-sizing: border-box;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 10px;
+}
+
+.cheer_amount {
+	position: relative;
+	display: inline-block;
+	float: left;
+	z-index: 2;
+}
+
+.cheer_time {
+	position: relative;
+	float: right;
+	z-index: 2;
+}
+
+.cheer_user_name_container {
+	position: absolute;
+	width: 100%;
+	top: 0px;
+	left: 0px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	z-index: 1;
+}
+
+.cheer_user_name {
+	display: inline-block;
+	width: calc(100% - 140px);
+	text-align: center;
+	max-height: 40px;
+	line-height: 20px;
+	word-break: break-word;
+}
+
+.cheer_content {
+	padding: 5px 10px;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	word-break: break-word;
+	line-height: 24px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.cheer_content img, .cheer_content span {
+	vertical-align: middle;
+}
+
+.cheer_image_parent {
+	display: inline-block;
+}

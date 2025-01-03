@@ -1,0 +1,83 @@
+
+:root {
+	--main-headline-color: hsl(0, 40%, 47%);
+	--headline-color: hsl(0, 38%, 34%);
+	--background-color: hsl(0, 3%, 11%);
+	
+	--button-color: hsla(0, 54%, 72%);
+	--button-hover-color: hsl(0, 60%, 78%);
+	--button-active-color: hsla(0, 65%, 83%);
+	
+	--main-headline-height: 48px;
+	--headline-height: 44px;
+	--minimum-width: 800px;
+	--minimum-height: 800px;
+	--headline-icon-size: 36px;
+	
+	/*  Overwritten At Runtime  */
+	--scrollbar-height: 0px;
+}
+
+body {
+	margin: 0px;
+	min-width: var(--minimum-width);
+	min-height: var(--minimum-height);
+	overflow-x: auto;
+	overflow-y: scroll;
+	color: #ffffff;
+	background-color: var(--background-color);
+	font-family: serif;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+#dashboard_container_node {
+	position: relative;
+	left: 0px;
+	right: 0px;
+	height: 100vh;
+	z-index: 1;
+}
+
+#header_node {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: var(--main-headline-height);
+	background-color: var(--main-headline-color);
+}
+
+#important_infos_container_node,
+#all_infos_container_node {
+	display: inline-block;
+	top: var(--main-headline-height);
+	width: 50%;
+	position: absolute;
+	background-color: var(--background-color);
+}
+
+#important_infos_container_node {
+	left: 0px;
+}
+
+#all_infos_container_node {
+	right: 0px;
+}
+
+.scroll_block {
+	min-height: calc(800px - 92px);
+	height: calc(100vh - 92px - var(--scrollbar-height));
+	overflow-x: hidden;
+	overflow-y: scroll;
+	transition: all ease-in 0.2s;
+	position: relative;
+	z-index: 1;
+}
+
+.scroll_transform {
+	min-height: 0px!important;
+	height: 0px!important;
+}

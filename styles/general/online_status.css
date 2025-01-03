@@ -1,0 +1,54 @@
+
+/*  Icon  */
+
+#online_status_icon {
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	float: right;
+}
+
+#online_status_icon > div {
+	width: 14px;
+	height: 14px;
+	box-sizing: border-box;
+	border-radius: 8px;
+	background-color: hsl(0, 0%, 45%);
+	border: 2px solid #ffffff;
+	margin: 6px;
+}
+
+#online_status_text.online {
+	display: none;
+}
+#online_status_icon.online {
+	display: none;
+}
+
+#online_status_icon.online > div {
+	background-color: hsl(116, 56%, 45%);
+}
+#online_status_icon.offline > div {
+	background-color: hsl(0, 56%, 45%);
+}
+
+/*  Text  */
+
+#online_status_text {
+	display: inline-block;
+	line-height: 26px;
+	float: right;
+	margin-right: 17px;
+	padding-left: 1px;
+	min-width: 51px;
+}
+
+#online_status_text::before {
+	content: "Unknown Status";
+}
+#online_status_text.online::before {
+	content: "Online";
+}
+#online_status_text.offline::before {
+	content: "Offline";
+}

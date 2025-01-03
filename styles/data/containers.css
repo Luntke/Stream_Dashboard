@@ -1,0 +1,24 @@
+
+.data_container {
+	box-sizing: border-box;
+	padding: 24px 32px calc(800px - 32px) 32px;
+	user-select: text;
+	-moz-user-select: text;
+	-webkit-user-select: text;
+	-ms-user-select: text;
+}
+
+.data_container > div {
+	position: relative;
+	margin-bottom: 16px;
+	overflow: hidden;
+	
+	margin-top: 0px;
+	opacity: 1.0;
+}
+
+.data_container > .slide_in {
+	transition-property: margin-top, opacity;
+	transition-duration: 0.6667s;
+	transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+}

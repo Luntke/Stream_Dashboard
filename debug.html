@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>StreamDashboard - jerma.org</title>
+	
+	<meta name="referrer" content="origin">
+	<meta name="theme-color" content="#a84848"/>
+	<meta name="description" content="A stream dashboard for the Twitch channel Jerma985."/>
+	<meta name="author" content="Merlin Luntke, Twitch Lazy_Luc"/>
+	
+	<link rel="icon" type="image/png" sizes="112x112" href="https://jerma.org/mustard_files/spreeo_heart.png"/>
+	<link rel="apple-touch-icon" type="image/png" sizes="112x112" href="https://jerma.org/mustard_files/spreeo_heart.png"/>
+	
+	<link href="./styles/credits/window.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="./styles/data/cheer.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/data/communitygift_and_raid.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/data/containers.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="./styles/general/bttv.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/layout_detail.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/layout_general.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/loading_screen.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/online_status.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/tooltip.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/twitter_emoji.css" rel="stylesheet" type="text/css"/>
+	<link href="./styles/general/window.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="./styles/restore/window.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="./styles/statistics/window.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="./styles/settings/window.css" rel="stylesheet" type="text/css"/>
+	
+	<link href="./styles/general/media.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<!--
+	HTML
+-->
+
+<div id="loading_screen_node">
+	<div>
+		<p><!-- "Loading" --></p>
+		<div id="loading_screen_bar_node">
+			<div id="loading_screen_progress_node"></div>
+		</div>
+	</div>
+</div>
+
+
+<div id="dashboard_container_node" class="display_none">
+	<div id="header_node">
+		<div class="main_headline"
+			><div class="headline_backlight"></div
+			><img src="https://jerma.org/mustard_files/spreeo_heart.png" alt="spreeoLove" class="headline_emote" referrerpolicy="no-referrer"
+			><span><span class="tall">S</span>tream<span class="tall">D</span>ashboard</span
+		></div>
+		
+		<div id="header_buttons_container_node">
+			<div class="header_button about_button">About</div>
+			<div class="header_button restore_button">Restore</div>
+			<div class="header_button credits_button">Credits</div>
+			<div class="header_button stats_button">Statistics</div>
+			<div id="online_status_text"></div>
+			<div id="online_status_icon"><div></div></div>
+		</div>
+	</div>
+	<div id="important_infos_container_node">
+		<div class="headline_container">
+			<div class="resume_scroll_box"></div>
+			
+			<div class="headline" id="panel_left_headline">Important</div>
+			
+			<div class="headline_icons">
+				<svg id="settings_svg" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<line id="tooth" x1="8" y1="4" x2="8" y2="3" stroke-width="1.5" stroke-linecap="round"/>
+					</defs>
+					
+					<g stroke="#ffffff">
+						<circle cx="8" cy="8" r="3.5" stroke-width="1.5" fill="none"/>
+						
+						<use href="#tooth" x="0" y="0" transform="rotate(0 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(32.72727272727273 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(65.45454545454545 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(98.18181818181819 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(130.9090909090909 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(163.63636363636363 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(196.36363636363637 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(229.0909090909091 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(261.8181818181818 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(294.54545454545456 8 8)"/>
+						<use href="#tooth" x="0" y="0" transform="rotate(327.27272727272725 8 8)"/>
+					</g>
+				</svg>
+			</div>
+		</div>
+		<div class="scroll_block">
+			<div id="important_infos_node" class="data_container"><!--
+				Only important informations are added here.
+			--></div>
+		</div>
+	</div>
+	<div id="all_infos_container_node">
+		<div class="headline_container">
+			<div class="resume_scroll_box"></div>
+			
+			<div class="headline" id="panel_right_headline">Everything</div>
+			
+			<div class="headline_icons">
+				<svg id="hide_svg" viewBox="-2 -2 20 20" xmlns="http://www.w3.org/2000/svg">
+					<ellipse cx="8" cy="8" rx="6" ry="4" stroke-width="1.5" stroke="#ffffff" fill="none"/>
+					<circle cx="8" cy="8" r="2.5" fill="#ffffff"/>
+					<line id="hide_svg_line_1" x1="2.75" y1="14" x2="14.75" y2="2" stroke-width="1.5" stroke-linecap="round" stroke="hsl(0, 40%, 29%)"/>
+					<line id="hide_svg_line_2" x1="1.25" y1="14" x2="13.25" y2="2" stroke-width="1.5" stroke-linecap="round" stroke="#ffffff"/>
+				</svg>
+			</div>
+		</div>
+		<div class="scroll_block">
+			<div id="all_infos_node" class="data_container"><!--
+				All Informations are added here.
+			--></div>
+		</div>
+	</div>
+</div>
+
+
+<!--
+	Scripts
+-->
+
+<script>
+let client_time_offset = 0;
+</script>
+
+<!--  Has To Be First  -->
+
+<script src="./scripts/general/processing/decode_recovery_data.js"></script>
+<script src="./scripts/general/processing/decode_tags.js"></script>
+<script src="./scripts/general/processing/emotes_unicode_fix.js"></script>
+<script src="./scripts/general/processing/formatting_message.js"></script>
+<script src="./scripts/general/processing/get_emojis.js"></script>
+<script src="./scripts/general/processing/load_bttv_emotes.js"></script>
+<script src="./scripts/general/processing/load_ffz_emotes.js"></script>
+<script src="./scripts/general/processing/process_cheermotes_data.js"></script>
+<script src="./scripts/general/processing/process_streams_data.js"></script>
+<script src="./scripts/general/base64.js"></script>
+<script src="./scripts/general/functions.js"></script>
+<script src="./scripts/general/get_emote_code_regex_string.js"></script>
+<script src="./scripts/general/loading_screen.js"></script>
+<script src="./scripts/general/resume_scroll.js"></script>
+<script src="./scripts/general/savey.js"></script>
+<script src="./scripts/general/storage.js"></script>
+<script src="./scripts/general/svg_animations.js"></script>
+<script src="./scripts/general/tooltip.js"></script>
+<script src="./scripts/general/variables.js"></script>
+<script src="./scripts/general/window.js"></script>
+
+
+<!--  Has To Be Somewhere  -->
+
+<script src="./scripts/chat_connection/bot.js"></script>
+<script src="./scripts/chat_connection/functions.js"></script>
+<script src="./scripts/chat_connection/irc_commands/JOIN.js"></script>
+<script src="./scripts/chat_connection/irc_commands/PRIVMSG.js"></script>
+<script src="./scripts/chat_connection/irc_commands/USERNOTICE.js"></script>
+<script src="./scripts/chat_connection/data/cheer.js"></script>
+<script src="./scripts/chat_connection/data/communitygift.js"></script>
+<script src="./scripts/chat_connection/data/giftsub.js"></script>
+<script src="./scripts/chat_connection/data/raid.js"></script>
+<script src="./scripts/chat_connection/data/subscription.js"></script>
+
+<script src="./scripts/about/window.js"></script>
+
+<script src="./scripts/credits/general.js"></script>
+<script src="./scripts/credits/build_credits.js"></script>
+<script src="./scripts/credits/canvas_handling.js"></script>
+<script src="./scripts/credits/controls.js"></script>
+<script src="./scripts/credits/drawing_chunks.js"></script>
+<script src="./scripts/credits/drawing_frames.js"></script>
+<script src="./scripts/credits/scroll_position.js"></script>
+<script src="./scripts/credits/window.js"></script>
+
+<script src="./scripts/data/general.js"></script>
+<script src="./scripts/data/add.js"></script>
+<script src="./scripts/data/is_important.js"></script>
+<script src="./scripts/data/offline_queue.js"></script>
+<script src="./scripts/data/get_data_object/cheer.js"></script>
+<script src="./scripts/data/get_data_object/communitygift.js"></script>
+<script src="./scripts/data/get_data_object/giftsub.js"></script>
+<script src="./scripts/data/get_data_object/raid.js"></script>
+<script src="./scripts/data/get_data_object/subscription.js"></script>
+
+<script src="./scripts/restore/general.js"></script>
+<script src="./scripts/restore/functions.js"></script>
+<script src="./scripts/restore/restore_data_window.js"></script>
+<script src="./scripts/restore/window.js"></script>
+
+<script src="./scripts/settings/general.js"></script>
+<script src="./scripts/settings/apply_settings_to_new_object.js"></script>
+<script src="./scripts/settings/apply_settings_to_restore_objects.js"></script>
+<script src="./scripts/settings/get_form_data.js"></script>
+<script src="./scripts/settings/on_change.js"></script>
+<script src="./scripts/settings/window.js"></script>
+<script src="./scripts/settings/apply_settings/data_shown_once.js"></script>
+<script src="./scripts/settings/apply_settings/important.js"></script>
+<script src="./scripts/settings/apply_settings/minimum_bits_shown.js"></script>
+<script src="./scripts/settings/apply_settings/minimum_bits.js"></script>
+
+<script src="./scripts/statistics/general.js"></script>
+<script src="./scripts/statistics/add.js"></script>
+<script src="./scripts/statistics/window.js"></script>
+
+<script src="./scripts/api/get_bttv_emotes.js"></script>
+<script src="./scripts/api/get_cheermotes.js"></script>
+<script src="./scripts/api/get_ffz_emotes.js"></script>
+<script src="./scripts/api/get_recent_streams.js"></script>
+<script src="./scripts/api/get_recovery_data.js"></script>
+
+
+<!--  Has To Be Last  -->
+
+<script src="./scripts/main.js"></script>
+
+
+</body>
+</html>

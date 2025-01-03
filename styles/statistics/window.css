@@ -1,0 +1,16 @@
+
+.statistics,
+.restore_statistics {
+	line-height: 26px;
+}
+
+.statistics > div,
+.restore_statistics > div {
+	width: 50%;
+	display: inline-block;
+}
+
+.restore_statistics {
+	width: 358px;
+	margin: 8px 20px;
+}

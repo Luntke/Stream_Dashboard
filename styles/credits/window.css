@@ -1,0 +1,184 @@
+
+/*  Restore Windows  */
+
+.window_content .credits_button {
+	position: absolute;
+	top: 46px;
+	right: 20px;
+}
+
+.credits_button {
+	font-size: 16px;
+	color: #ffffff;
+	padding: 4px 8px;
+	display: inline-block;
+	border-radius: 7px;
+	cursor: pointer;
+	background-color: hsl(0, 16%, 38%);
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.credits_button:hover {
+	background-color: hsla(0, 16%, 43%);
+}
+
+.credits_button:active {
+	background-color: hsla(0, 16%, 48%);
+}
+
+
+/*  Credits Windows  */
+
+.window.credits_window {
+	width: 731px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.credits_window .window_content {
+	padding: 0px;
+	line-height: 0px;
+	height: 413px;
+}
+
+.credits_window .credits_canvas {
+	width: 729px;
+	height: 384px;
+	background-color: #000000;
+	border-bottom: 1px solid #000000;
+}
+
+.credits_play_button {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	width: 80px;
+	margin: 0px;
+	height: 27px;
+	border-left: 1px solid #000000;
+	display: inline-block;
+	background-color: #ffffff;
+	color: #000000;
+	vertical-align: top;
+	line-height: 27px;
+	text-align: center;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+/*  Range Input  */
+
+/*
+Website I used to partially generate the input style:
+	http://danielstern.ca/range.css
+*/
+
+
+.credits_timeline,
+.credits_timeline_canvas {
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+
+.credits_timeline_canvas {
+	width: 648px;
+	height: 27px;
+	z-index: 1;
+}
+
+.credits_timeline {
+	-webkit-appearance: none;
+	width: 648px;
+	margin: 0px;
+	/* The canvas is smoother due to subpixel positioning. The input node simply
+	   gives functionality to the drawn canvas and is invisibly above it. */
+	opacity: 0.0;
+	z-index: 2;
+}
+
+.credits_timeline:focus {
+	outline: none;
+}
+.credits_timeline::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 27px;
+	cursor: default;
+	background: #4fae73;
+	border-radius: 0px;
+	border: 0px;
+}
+.credits_timeline::-webkit-slider-thumb {
+	box-shadow: 0px;
+	border: 0px solid #000000;
+	height: 27px;
+	width: 51px;
+	border-radius: 0px;
+	background: #ffffff;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin: 0px;
+}
+.credits_timeline:focus::-webkit-slider-runnable-track {
+	background: #3fb96b;
+}
+.credits_timeline::-moz-range-track {
+	width: 100%;
+	height: 27px;
+	cursor: default;
+	box-shadow: 0px;
+	background: #4fae73;
+	border-radius: 0px;
+	border: 0px;
+}
+.credits_timeline::-moz-range-thumb {
+	box-shadow: 0px;
+	border: 1px solid #000000;
+	height: 27px;
+	width: 51px;
+	border-radius: 0px;
+	background: #ffffff;
+	cursor: pointer;
+}
+.credits_timeline::-ms-track {
+	width: 100%;
+	height: 27px;
+	cursor: default;
+	background: transparent;
+	border-color: transparent;
+	color: transparent;
+}
+.credits_timeline::-ms-fill-lower {
+	background: #3db167;
+	border: 0px;
+	border-radius: 0px;
+	box-shadow: 0px;
+}
+.credits_timeline::-ms-fill-upper {
+	background: #4fae73;
+	border: 0px;
+	border-radius: 0px;
+	box-shadow: 0px;
+}
+.credits_timeline::-ms-thumb {
+	box-shadow: 0px;
+	border: 1px solid #000000;
+	height: 27px;
+	width: 51px;
+	border-radius: 0px;
+	background: #ffffff;
+	cursor: pointer;
+}
+.credits_timeline:focus::-ms-fill-lower {
+	background: #4fae73;
+}
+.credits_timeline:focus::-ms-fill-upper {
+	background: #3fb96b;
+}

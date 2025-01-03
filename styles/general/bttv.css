@@ -1,0 +1,38 @@
+
+/*  This handles the BTTV emote overlap  */
+
+/*
+Unlike the BTTV CSS properties, we need to move 2 pixel more to the left.
+*/
+
+.bttv_hide {
+	display: none;
+}
+
+
+.bttv_overlap_IceCube > img {
+	margin-left: -35px;
+}
+
+.bttv_overlap_SoSnowy > img {
+	margin-left: -34px;
+}
+
+.bttv_overlap_SantaHat > img {
+	margin-left: -36px;
+	margin-top: -18px;
+}
+
+.bttv_overlap_TopHat > img,
+.bttv_overlap_CandyCane > img,
+.bttv_overlap_ReinDeer > img {
+	margin-left: -33px;
+	margin-top: -18px;
+}
+
+.bttv_overlap_cvHazmat > img,
+.bttv_overlap_cvMask > img {
+	margin-left: -36px;
+	height: 34px;
+	width: 34px;
+}
